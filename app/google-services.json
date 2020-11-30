@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "728676866929",
+    "firebase_url": "https://study-application-cdf70.firebaseio.com",
+    "project_id": "study-application-cdf70",
+    "storage_bucket": "study-application-cdf70.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:728676866929:android:ee4112119c4e3b1c5874d0",
+        "android_client_info": {
+          "package_name": "com.example.studyapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "728676866929-hfkkikiumufrihq7foaqm9ahtedfsgj4.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA3tX8KN9AguiQeh7IRdjgjujeetA0FBn4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "728676866929-hfkkikiumufrihq7foaqm9ahtedfsgj4.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
