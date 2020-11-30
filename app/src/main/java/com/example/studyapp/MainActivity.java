@@ -3,10 +3,12 @@ package com.example.studyapp;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.SwitchCompat;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.LinearLayout;
 import android.widget.Switch;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.material.textfield.TextInputEditText;
@@ -16,6 +18,7 @@ public class MainActivity extends AppCompatActivity {
     TextInputEditText user;
     TextInputEditText pass;
     Switch teaStu;
+    TextView signUp;
     String username;
     String password;
 
@@ -30,6 +33,7 @@ public class MainActivity extends AppCompatActivity {
         pass = findViewById(R.id.textInputPassword);
         login = findViewById(R.id.btnLogin);
         teaStu = findViewById(R.id.swtiching);
+        signUp = findViewById(R.id.signUpText);
 
         teaStu.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -60,5 +64,15 @@ public class MainActivity extends AppCompatActivity {
                 }
             }
         });
+        signUp.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                goSign(v);
+            }
+        });
+    }
+    private void goSign(View view){
+        Intent intent = new Intent(view.getContext(), SignUpPage.class);
+        startActivity(intent);
     }
 }
