@@ -61,6 +61,8 @@ public class MainActivity extends AppCompatActivity {
                 if(check){
                     if(myUser.equals("admin") && myPass.equals("admin")){
                         Toast.makeText(MainActivity.this, "Login Successful", Toast.LENGTH_LONG).show();
+                        Intent intent = new Intent(v.getContext(), teacherPage.class);
+                        startActivity(intent);
                     }else{
                         user.setError("Wrong Username or Password");
                     }
