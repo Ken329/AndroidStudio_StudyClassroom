@@ -1,5 +1,6 @@
 package com.example.studyapp;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.SwitchCompat;
 
@@ -12,6 +13,12 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.material.textfield.TextInputEditText;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.Query;
+import com.google.firebase.database.ValueEventListener;
 
 public class MainActivity extends AppCompatActivity {
     LinearLayout login;
@@ -49,18 +56,40 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 boolean check = teaStu.isChecked();
-                String myUser;
-                String myPass;
+                String myUser = user.getText().toString();
+                String myPass = pass.getText().toString();
                 if(check){
-                    myUser = user.getText().toString();
-                    myPass = pass.getText().toString();
                     if(myUser.equals("admin") && myPass.equals("admin")){
                         Toast.makeText(MainActivity.this, "Login Successful", Toast.LENGTH_LONG).show();
                     }else{
                         user.setError("Wrong Username or Password");
                     }
                 }else{
+                    DatabaseReference ref = FirebaseDatabase.getInstance().getReference("Student");
+                    Query query = ref.orderByChild("username").equalTo(myUser);
+                    query.addListenerForSingleValueEvent(new ValueEventListener() {
+                        @Override
+                        public void onDataChange(@NonNull DataSnapshot snapshot) {
+                            if(snapshot.exists()){
+                                String passFromDb = snapshot.child(myUser).child("password").getValue(String.class);
+                                if(passFromDb.equals(myPass)){
+                                    Toast.makeText(MainActivity.this, "Login Successful", Toast.LENGTH_LONG).show();
+                                    Intent intent = new Intent(v.getContext(), StudentPage.class);
+                                    intent.putExtra("username", myUser);
+                                    startActivity(intent);
+                                }else{
+                                    pass.setError("Password not correct");
+                                }
+                            }else{
+                                user.setError("Username not available");
+                            }
+                        }
 
+                        @Override
+                        public void onCancelled(@NonNull DatabaseError error) {
+
+                        }
+                    });
                 }
             }
         });
