@@ -9,11 +9,14 @@
         android:layout_width="match_parent"
         android:layout_height="100dp"
         android:background="@drawable/button"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
         android:gravity="end">
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginRight="20dp"
+            android:layout_marginRight="10dp"
             android:layout_marginTop="30dp"
             android:textSize="20dp"
             android:text="Welcome to Study Classroom"></TextView>
@@ -40,6 +43,7 @@
         android:id="@+id/listViewTeacher"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginTop="105dp"/>
+        android:layout_marginTop="110dp"
+        android:clickable="false" />
 
 </RelativeLayout>
