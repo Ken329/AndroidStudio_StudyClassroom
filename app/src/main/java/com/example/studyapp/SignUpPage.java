@@ -12,11 +12,12 @@ import android.widget.Toast;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
-public class SignUpPage extends AppCompatActivity {
+public class  SignUpPage extends AppCompatActivity {
     EditText user;
     EditText pass;
     EditText conPass;
     EditText phone;
+    EditText sem;
     Button register;
     Button back;
 
@@ -31,6 +32,7 @@ public class SignUpPage extends AppCompatActivity {
         pass = findViewById(R.id.editTextPassword);
         conPass = findViewById(R.id.editTextConPass);
         phone = findViewById(R.id.editTextPhone);
+        sem = findViewById(R.id.editTextSemester);
         register = findViewById(R.id.btnRegister);
         back = findViewById(R.id.btnBack);
 
@@ -47,15 +49,38 @@ public class SignUpPage extends AppCompatActivity {
                 String myPass = pass.getText().toString();
                 String myConPass = conPass.getText().toString();
                 String myPhone = phone.getText().toString();
+                String mySem = sem.getText().toString();
+                String sub1 = null, sub2 = null, additional = null;
 
                 if(myPass.equals(myConPass)){
-                    firebase = FirebaseDatabase.getInstance();
-                    ref = firebase.getReference("Student");
+                    if(Integer.valueOf(mySem) > 3 || Integer.valueOf(mySem) < 1){
+                        sem.setError("Your semester only 1 to 3, please check again");
+                    }else{
+                        switch (mySem){
+                            case "1":
+                                sub1 = "C++";
+                                sub2 = "Math";
+                                additional = null;
+                                break;
+                            case "2":
+                                sub1 = "Java";
+                                sub2 = "Interface Design";
+                                additional = null;
+                                break;
+                            case "3":
+                                sub1 = "Network Design";
+                                sub2 = "Software Design";
+                                additional = null;
+                                break;
+                        }
+                        firebase = FirebaseDatabase.getInstance();
+                        ref = firebase.getReference("Student");
 
-                    newStudent student = new newStudent(myUser, myPass, myPhone);
-                    ref.child(myUser).setValue(student);
-                    Toast.makeText(SignUpPage.this, "New Student added", Toast.LENGTH_LONG).show();
-                    goBack(v);
+                        newStudent student = new newStudent(myUser, myPass, myPhone, mySem, sub1, sub2, additional);
+                        ref.child(myUser).setValue(student);
+                        Toast.makeText(SignUpPage.this, "New Student added", Toast.LENGTH_LONG).show();
+                        goBack(v);
+                    }
                 }else{
                     conPass.setError("Password not equal, Please check!!!");
                 }

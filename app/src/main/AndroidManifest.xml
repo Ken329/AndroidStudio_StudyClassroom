@@ -9,6 +9,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.StudyApp">
+        <activity android:name=".editDetailPage"></activity>
+        <activity android:name=".showDetailPage" />
         <activity android:name=".addSubjectPage" />
         <activity android:name=".teacherPage" />
         <activity android:name=".StudentPage" />

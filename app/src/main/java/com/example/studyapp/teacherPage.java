@@ -12,6 +12,8 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.TextView;
@@ -32,6 +34,7 @@ import java.util.ArrayList;
 public class teacherPage extends AppCompatActivity {
     ListView mListView;
     LinearLayout btnPlus;
+    ImageView btnOut;
     ArrayList<String> item = new ArrayList<>();
     ArrayList<String> detail = new ArrayList<>();
     DatabaseReference ref;
@@ -40,6 +43,7 @@ public class teacherPage extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_teacher_page);
+        btnOut = findViewById(R.id.imageBtnOut);
 
         mListView = findViewById(R.id.listViewTeacher);
         ArrayAdapter arrayAdapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, item);
@@ -66,6 +70,14 @@ public class teacherPage extends AppCompatActivity {
             @Override
             public void onCancelled(@NonNull DatabaseError error) {
 
+            }
+        });
+
+        btnOut.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(v.getContext(), MainActivity.class);
+                startActivity(intent);
             }
         });
         mListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {

@@ -10,7 +10,7 @@
         android:id="@+id/swtiching"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="70dp"
         android:text="Student"
         android:textSize="24sp"
         app:layout_constraintBottom_toTopOf="@+id/textInputUser"

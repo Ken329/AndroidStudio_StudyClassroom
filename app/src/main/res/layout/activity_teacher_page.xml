@@ -22,10 +22,10 @@
             android:text="Welcome to Study Classroom"></TextView>
         <LinearLayout
             android:id="@+id/PlusButton"
-            android:layout_width="80dp"
-            android:layout_height="80dp"
-            android:layout_marginTop="10dp"
-            android:layout_marginRight="25dp"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginTop="25dp"
+            android:layout_marginRight="10dp"
             android:background="@drawable/plus_button">
             <TextView
                 android:id="@+id/textViewPlus"
@@ -33,17 +33,23 @@
                 android:layout_height="match_parent"
                 android:text="+"
                 android:gravity="center"
-                android:textSize="35dp"
+                android:textSize="25dp"
                 android:textStyle="bold"/>
         </LinearLayout>
-
+        <ImageView
+            android:id="@+id/imageBtnOut"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginTop="25dp"
+            android:layout_marginRight="15dp"
+            app:srcCompat="@drawable/abc_vector_test" />
     </LinearLayout>
 
     <ListView
         android:id="@+id/listViewTeacher"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginTop="110dp"
+        android:layout_marginTop="120dp"
         android:clickable="false" />
 
 </RelativeLayout>
