@@ -2,13 +2,14 @@
 <RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="120dp">
     <EditText
         android:id="@+id/addSubjectText"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Only one extra subject can be added"
-        android:layout_margin="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
         android:gravity="center"></EditText>
 
     <Button
@@ -16,7 +17,7 @@
         android:id="@+id/addSubjeectBtn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="60dp"
         android:text="Add"></Button>
 
 

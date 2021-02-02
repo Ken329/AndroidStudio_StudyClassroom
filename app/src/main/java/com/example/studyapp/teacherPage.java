@@ -33,7 +33,7 @@ import java.util.ArrayList;
 
 public class teacherPage extends AppCompatActivity {
     ListView mListView;
-    LinearLayout btnPlus;
+    TextView btnPlus;
     ImageView btnOut;
     ArrayList<String> item = new ArrayList<>();
     ArrayList<String> detail = new ArrayList<>();
@@ -44,6 +44,7 @@ public class teacherPage extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_teacher_page);
         btnOut = findViewById(R.id.imageBtnOut);
+        btnPlus = findViewById(R.id.textViewPlus);
 
         mListView = findViewById(R.id.listViewTeacher);
         ArrayAdapter arrayAdapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, item);
@@ -101,7 +102,6 @@ public class teacherPage extends AppCompatActivity {
                 return false;
             }
         });
-        btnPlus = findViewById(R.id.PlusButton);
         btnPlus.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

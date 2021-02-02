@@ -9,10 +9,10 @@
     <LinearLayout
         android:id="@+id/linearLayout"
         android:layout_width="match_parent"
-        android:layout_height="120dp"
-        android:layout_marginLeft="5dp"
-        android:layout_marginRight="5dp"
-        android:layout_marginTop="28dp"
+        android:layout_height="80dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="80dp"
         android:background="@drawable/detail_box"
         android:orientation="vertical"
         app:layout_constraintEnd_toEndOf="parent"
@@ -22,27 +22,28 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
             android:text="Username"
             android:gravity="center"
-            android:textSize="30dp"
+            android:textSize="20dp"
             android:textColor="@color/white"></TextView>
         <TextView
             android:id="@+id/detailUsername"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text=""
-            android:layout_marginTop="5dp"
+            android:layout_marginTop="10dp"
             android:gravity="center"
-            android:textSize="40dp"
+            android:textSize="18dp"
             android:textColor="@color/white"></TextView>
     </LinearLayout>
 
     <LinearLayout
         android:id="@+id/linearLayout2"
         android:layout_width="match_parent"
-        android:layout_height="120dp"
-        android:layout_marginLeft="5dp"
-        android:layout_marginRight="5dp"
+        android:layout_height="80dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
         android:layout_marginTop="24dp"
         android:background="@drawable/detail_box"
         android:orientation="vertical"
@@ -55,25 +56,26 @@
             android:layout_height="wrap_content"
             android:text="Password"
             android:gravity="center"
-            android:textSize="30dp"
+            android:textSize="20dp"
+            android:layout_marginTop="10dp"
             android:textColor="@color/white"></TextView>
         <TextView
             android:id="@+id/detailPassword"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text=""
-            android:layout_marginTop="5dp"
+            android:layout_marginTop="10dp"
             android:gravity="center"
-            android:textSize="40dp"
+            android:textSize="18dp"
             android:textColor="@color/white"></TextView>
     </LinearLayout>
 
     <LinearLayout
         android:id="@+id/linearLayout3"
         android:layout_width="match_parent"
-        android:layout_height="120dp"
-        android:layout_marginLeft="5dp"
-        android:layout_marginRight="5dp"
+        android:layout_height="80dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
         android:layout_marginTop="24dp"
         android:background="@drawable/detail_box"
         android:orientation="vertical"
@@ -86,26 +88,27 @@
             android:layout_height="wrap_content"
             android:text="Phone Number"
             android:gravity="center"
-            android:textSize="30dp"
+            android:textSize="20dp"
+            android:layout_marginTop="10dp"
             android:textColor="@color/white"></TextView>
         <TextView
             android:id="@+id/detailPhone"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text=""
-            android:layout_marginTop="5dp"
+            android:layout_marginTop="10dp"
             android:gravity="center"
-            android:textSize="40dp"
+            android:textSize="18dp"
             android:textColor="@color/white"></TextView>
     </LinearLayout>
 
     <LinearLayout
         android:id="@+id/linearLayout4"
         android:layout_width="match_parent"
-        android:layout_height="120dp"
-        android:layout_marginLeft="5dp"
-        android:layout_marginTop="24dp"
-        android:layout_marginRight="5dp"
+        android:layout_height="80dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginRight="10dp"
         android:background="@drawable/detail_box"
         android:orientation="vertical"
         app:layout_constraintEnd_toEndOf="parent"
@@ -119,24 +122,19 @@
             android:gravity="center"
             android:text="Semester"
             android:textColor="@color/white"
-            android:textSize="30dp"></TextView>
+            android:layout_marginTop="10dp"
+            android:textSize="20dp"
+            tools:ignore="MissingConstraints"></TextView>
 
         <TextView
             android:id="@+id/detailSemester"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="5dp"
+            android:layout_marginTop="10dp"
             android:gravity="center"
             android:text=""
             android:textColor="@color/white"
-            android:textSize="40dp"></TextView>
-    </LinearLayout><![CDATA[
-
-
-
-    "
-        tools:layout_editor_absoluteX="178dp"
-        tools:layout_editor_absoluteY="166dp">
-
-    ]]>
+            android:textSize="18dp"
+            tools:ignore="MissingConstraints"></TextView>
+    </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
